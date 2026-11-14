@@ -1,8 +1,8 @@
 # Recruitment Tracker (Salesforce)
-
 A recruitment management app built on Salesforce, covering both admin configuration and custom development.
 
-![Dashboard](images/dashboard.png)
+<img width="1900" height="747" alt="Dashboard" src="https://github.com/user-attachments/assets/6ed19c00-bd62-42bd-96d8-bef463342aaa" />
+
 
 ## Features
 - Duplicate application and closed-position checks (Apex trigger, handler pattern)
