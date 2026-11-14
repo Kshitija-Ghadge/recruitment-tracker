@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Open Positions" icon-name="standard:work_order">
+        <div class="slds-p-horizontal_medium">
+            <lightning-input type="search" label="Search Position" variant="label-hidden"
+                placeholder="Position cha naav shodha..." onchange={handleSearch}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <template if:true={positions.error}>
+                <p class="slds-text-color_error">Data load karta ala nahi.</p>
+            </template>
+
+            <template if:true={isEmpty}>
+                <p>Konti Open Position sapadli nahi.</p>
+            </template>
+
+            <template for:each={items} for:item="pos">
+                <div key={pos.Id} data-id={pos.Id} class={pos.cssClass} onclick={handleSelect}>
+                    <p class="slds-text-heading_small">{pos.Name}</p>
+                    <p>Dept: {pos.Department__c}</p>
+                    <p>Openings: {pos.Openings__c} | Filled: {pos.Filled_Count__c}</p>
+                    <p>Closing: <lightning-formatted-date-time value={pos.Closing_Date__c} year="numeric" month="short"
+                            day="2-digit"></lightning-formatted-date-time></p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Position Summary" icon-name="standard:work_order">
+        <lightning-record-view-form record-id={recordId} object-api-name="Position__c">
+            <div class="slds-grid slds-wrap slds-p-horizontal_small">
+                <div class="slds-col slds-size_1-of-2"><lightning-output-field
+                        field-name="Department__c"></lightning-output-field></div>
+                <div class="slds-col slds-size_1-of-2"><lightning-output-field
+                        field-name="Status__c"></lightning-output-field></div>
+                <div class="slds-col slds-size_1-of-2"><lightning-output-field
+                        field-name="Openings__c"></lightning-output-field></div>
+                <div class="slds-col slds-size_1-of-2"><lightning-output-field
+                        field-name="Filled_Count__c"></lightning-output-field></div>
+            </div>
+        </lightning-record-view-form>
+        <div class="slds-p-around_small">
+            <lightning-button label="All Applications" onclick={goToApplications}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

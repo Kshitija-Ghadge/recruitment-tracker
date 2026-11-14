@@ -1,0 +1,12 @@
+.position-card {
+    cursor: pointer;
+}
+
+.position-card:hover {
+    background: #f3f3f3;
+}
+
+.position-card.selected {
+    border-color: #0176d3;
+    background: #eef4ff;
+}

@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Apply for Position" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <template if:false={positionId}>
+                <p>Adhi Position select kara.</p>
+            </template>
+            <template if:true={positionId}>
+                <lightning-input label="Full Name" data-field="name" required></lightning-input>
+                <lightning-input label="Email" type="email" data-field="email" required></lightning-input>
+                <lightning-input label="Phone" type="tel" data-field="phone"></lightning-input>
+                <lightning-input label="Experience (Years)" type="number" step="0.1" min="0"
+                    data-field="experience"></lightning-input>
+                <lightning-input label="Expected Salary" type="number" min="1" data-field="salary"
+                    message-when-range-underflow="Salary 0 peksha jast pahije"></lightning-input>
+
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="brand" label="Submit Application" onclick={handleSubmit}
+                        disabled={isSaving}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

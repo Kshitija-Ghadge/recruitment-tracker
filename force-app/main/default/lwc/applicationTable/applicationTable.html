@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Applications" icon-name="standard:person_account">
+        <template if:true={effectiveId}>
+            <div class="slds-p-horizontal_small">
+                <lightning-datatable key-field="Id" data={rows} columns={columns} draft-values={draftValues}
+                    onsave={handleSave} onrowaction={handleRowAction} hide-checkbox-column>
+                </lightning-datatable>
+                <template if:true={noRows}>
+                    <p class="slds-p-around_small">Ajun konihi apply kele nahi.</p>
+                </template>
+            </div>
+        </template>
+        <template if:false={effectiveId}>
+            <p class="slds-p-around_medium">Position select kara.</p>
+        </template>
+    </lightning-card>
+</template>

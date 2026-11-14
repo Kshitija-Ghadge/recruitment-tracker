@@ -1,0 +1,15 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" medium-device-size="4" padding="around-small">
+            <c-position-list onpositionselect={handlePositionSelect}></c-position-list>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12" medium-device-size="8" padding="around-small">
+            <c-application-table position-id={selectedPositionId}
+                onstatuschange={handleStatusChange}></c-application-table>
+            <div class="slds-m-top_small">
+                <c-apply-form position-id={selectedPositionId} onapplied={handleApplied}></c-apply-form>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

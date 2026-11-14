@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Selected Position (via LMS)" icon-name="standard:announcement">
+        <div class="slds-p-around_medium">
+            <template if:true={position.data}>
+                <p class="slds-text-heading_small">{positionName}</p>
+            </template>
+            <template if:false={positionId}>
+                <p>Ajun konti Position select keli nahi.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
